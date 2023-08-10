@@ -1,70 +1,104 @@
-# Getting Started with Create React App
+# Este repositorio se creó con el siguiente comando
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+npx create-react-app
 
-## Available Scripts
+## Introducción
 
-In the project directory, you can run:
+Esta guía ha sido formulada con mucho cariño con el propósito de normalizar el código fuente realizado para el proyecto y clientes en Experiencia It, Se siguen convenciones estándares de HTML, CSS y JS pero se optimizan y normalizan varias reglas implícitas, dejando lugar al uso de criterio de cada integrante del equipo de desarrollo web.
 
-### `npm start`
+## link del repositorio GIT
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+https://github.com/emilioQuilodran/electroServiceFront
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Branches y flujo de trabajo
 
-### `npm test`
+Clónate el repositorio principal a tu máquina local usando el comando git clone <URL-del-repositorio>.
+Crea una nueva rama para trabajar en tu tarea utilizando el comando git branch nombre-de-tu-rama.
+Cambia a tu rama recién creada usando el comando git checkout nombre-de-tu-rama.
+Realiza tus cambios en archivos, agrega y realiza commits como se explicó anteriormente.
+Cuando hayas terminado con tu tarea y desees incorporar tus cambios a la rama principal, cambia a la rama principal usando el comando git checkout main (o el nombre de la rama principal).
+Fusiona tu rama con la rama principal usando el comando git merge nombre-de-tu-rama.
+Si hay conflictos enla fusión, Git te notificará para que puedas resolverlos manualmente. Una vez resueltos, realiza el commit de fusión.
+Siguiendo este flujo de trabajo, puedes colaborar de manera efectiva con otros desarrolladores en un proyecto, manteniendo un historial claro de cambios y evitando conflictos.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### branchs list:
 
-### `npm run build`
+    production
+    development
+    rama-dev
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Estructura de proyecto
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+nombre-proyecto/
+|** src
+| |** scss
+| | |** style.scss
+| | |** inc
+| | |** mixins.scss
+| | |** normalize.scss
+| | |** colors.scss
+| | |** variables.scss
+| | |** components.scss
+| |
+| |** components
+| | |** pure
+| | | |** header.jsx
+| | | |** footer.jsx
+| | containers
+| | |** templatename.jsx
+| |
+| |** pages
+| | |** home.js
+| |
+|**public
+| |** images
+|
+|** package.json
+|** .gitignore
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Sintaxis
 
-### `npm run eject`
+Utiliza 2 espacios (soft tab) / 1 tab (hard tab) para indentar. Se configura fácilmente, por ejemplo, en Sublime Text.
+El doctype por defecto será HTML5: doctype html
+Usa doble comilla " (double quote) para abrir y cerrar atributos, aunque el estándar no lo requiera.
+Prefiere atributos simples en los que su valor sea el mismo del atributo, por ejemplo:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+// Evita:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<pre>
+    <input required="required" />
+</pre>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+// Prefiere:
+<input required />
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Comentarios
 
-## Learn More
+// NOMBRE SECCION
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Nomenclatura de clases y ID's
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Para nombres compuestos utiliza camelCase "openModal", no guión bajo \_ (underscore). Nunca comiences con un dígito.
+Crea nombre de clases que sean descriptivas al contexto y/o función que cumple el elemento más que en su apariencia:
+// Bien
+.modal {}
+.titulo {}
+// Evita
+.grande {}
+.rojo {}
 
-### Code Splitting
+## JavaScript
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Utilizar componentes de tipo funcion , en lugar de usar componentes de tipo clases:
 
-### Analyzing the Bundle Size
+const myFunction = () => {
+// code here...
+}
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### ¿Por qué usar funciones por encima de clases?
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+El frontend está experimentando una fuerte influencia de los lenguajes de programación funcionales, y esto nos lleva a integrar practicas del paradigma funcional en nuestro día a día.
+Ayuda a unificar criterios, donde todos los componentes tienen la misma estructura.
+Nos ahorra entender un concepto que está en camino al desuso en Javascript (Clases), aligerando la curva de aprendizaje
+Hacer testing de un componente funcional suele ser más sencillo.
+Suelen requerir menos lineas de código haciendolo más facil de entender.
