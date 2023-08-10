@@ -66,7 +66,9 @@ Prefiere atributos simples en los que su valor sea el mismo del atributo, por ej
 // Evita:
 
 <pre>
-    <input required="required" />
+    <code>
+        <input required="required" />
+    </code>
 </pre>
 
 // Prefiere:
