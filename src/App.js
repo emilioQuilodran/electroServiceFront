@@ -5,6 +5,9 @@ const App = () => {
     <div className="App">
       <h1>Hola Mundo</h1>
       <h2>Hola mundo</h2>
+      <div>
+        <h1>Hola Mundo</h1>
+      </div>
     </div>
   );
 }
