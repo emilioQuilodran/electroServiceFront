@@ -29,6 +29,7 @@ Siguiendo este flujo de trabajo, puedes colaborar de manera efectiva con otros d
 
 ## Estructura de proyecto
 
+```
 nombre-proyecto/
 |** src
 | |** scss
@@ -55,6 +56,7 @@ nombre-proyecto/
 |
 |** package.json
 |** .gitignore
+```
 
 ### Sintaxis
 
@@ -65,14 +67,15 @@ Prefiere atributos simples en los que su valor sea el mismo del atributo, por ej
 
 // Evita:
 
-<pre>
-    <code>
-        <input required="required" />
-    </code>
-</pre>
+```
+    <input required="required" />
+```
 
 // Prefiere:
-<input required />
+
+```
+    <input required />
+```
 
 ### Comentarios
 
@@ -93,9 +96,11 @@ Crea nombre de clases que sean descriptivas al contexto y/o función que cumple 
 
 Utilizar componentes de tipo funcion , en lugar de usar componentes de tipo clases:
 
+```
 const myFunction = () => {
 // code here...
 }
+```
 
 ### ¿Por qué usar funciones por encima de clases?
 
