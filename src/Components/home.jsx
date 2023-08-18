@@ -5,14 +5,14 @@ const Home = () => {
     <div>
       <h1>Hola soy la Home</h1>
       <h2>Páginas</h2>
-      <ul>
-        <li><Link to="/user">Usuario</Link></li>
-        <li><Link to="/employees">Empleados</Link></li>
-        <li><Link to="/client">Clientes</Link></li>
-        <li><Link to="/materials">Materiales</Link></li>
-        <li><Link to="/budget">Presupuestos</Link></li>
-        <li><Link to="/reception">Recepción</Link></li>
-        <li><Link to="/providers">Proveedores</Link></li>
+      <ul style={{padding: 0}}>
+        <li style={{listStyle: "none", padding: 5}}><Link to="/user">Usuario</Link></li>
+        <li style={{listStyle: "none", padding: 5}}><Link to="/employees">Empleados</Link></li>
+        <li style={{listStyle: "none", padding: 5}}><Link to="/client">Clientes</Link></li>
+        <li style={{listStyle: "none", padding: 5}}><Link to="/materials">Materiales</Link></li>
+        <li style={{listStyle: "none", padding: 5}}><Link to="/budget">Presupuestos</Link></li>
+        <li style={{listStyle: "none", padding: 5}}><Link to="/reception">Recepción</Link></li>
+        <li style={{listStyle: "none", padding: 5}}><Link to="/providers">Proveedores</Link></li>
       </ul>
     </div>
   )
