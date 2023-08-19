@@ -1,13 +1,13 @@
-import './App.css';
+
 import { Route, Routes } from "react-router-dom";
-import Home from './Components/home';
-import User from './Components/user';
-import Client from './Components/client';
-import Employees from './Components/employees';
-import Materials from './Components/materials';
-import Budget from './Components/budget';
-import Reception from './Components/reception';
-import Providers from './Components/providers';
+import Home from './Components/pages/home/home';
+import User from './Components/pages/user/user';
+import Client from './Components/pages/client/client';
+import Employees from './Components/pages/employees/employees';
+import Materials from './Components/pages/materials/materials';
+import Budget from './Components/pages/budget/budget';
+import Reception from './Components/pages/reception/reception';
+import Providers from './Components/pages/providers/providers';
 
 
 const App = () => {
