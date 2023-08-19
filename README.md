@@ -1,9 +1,18 @@
-# Este repositorio se creó con el siguiente comando
-
+# Comandos para levantar por primera vez la App
+```
 npx create-react-app
 npm i sass
 npm install react-router-dom
+```
 
+### levantar react
+```
+npm start
+```
+### matar procesos de node
+```
+killall -9 node
+```
 
 ## Introducción
 
