@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom'
-
+import './style.scss'
 const Home = () => {
   return (
-    <div>
+    <div className='HomeWrapper'>
       <h1>Hola soy la Home</h1>
       <h2>Páginas</h2>
       <ul style={{padding: 0}}>

@@ -1,6 +1,18 @@
-# Este repositorio se creó con el siguiente comando
-
+# Comandos para levantar por primera vez la App
+```
 npx create-react-app
+npm i sass
+npm install react-router-dom
+```
+
+### levantar react
+```
+npm start
+```
+### matar procesos de node
+```
+killall -9 node
+```
 
 ## Introducción
 
@@ -32,27 +44,30 @@ Siguiendo este flujo de trabajo, puedes colaborar de manera efectiva con otros d
 ```
 nombre-proyecto/
 |** src
+| |** assets
+| | | **fonts
+| | | **images
 | |** scss
 | | |** style.scss
+| | |** globalStyles.scss
 | | |** inc
 | | |** mixins.scss
 | | |** normalize.scss
 | | |** colors.scss
 | | |** variables.scss
 | | |** components.scss
-| |
+| |** constants
+| |** context
 | |** components
 | | |** pure
 | | | |** header.jsx
 | | | |** footer.jsx
 | | containers
 | | |** templatename.jsx
-| |
 | |** pages
-| | |** home.js
-| |
-|**public
-| |** images
+| | |** home
+| | | |** home.jsx
+| | | |** styles.jsx
 |
 |** package.json
 |** .gitignore
