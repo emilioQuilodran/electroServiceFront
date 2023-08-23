@@ -5,9 +5,11 @@ const Budget = () => {
       <h1>Hola</h1>
       <h1>Budget</h1>
       <ul>
-        <li>No tan caro</li>
+        <li>Caro</li>
         <li>Carisimo</li>
         <li>Incomprable</li>
+        <li>test 2</li>
+        <li>test 1</li>
       </ul>
     </div>
   )
