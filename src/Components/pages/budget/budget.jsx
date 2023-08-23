@@ -6,8 +6,6 @@ const Budget = () => {
       <h1>Budget</h1>
       <ul>
         <li>No tan caro</li>
-        <li>Carisimo</li>
-        <li>Incomprable</li>
       </ul>
     </div>
   )
