@@ -5,7 +5,9 @@ const Budget = () => {
       <h1>Hola</h1>
       <h1>Budget</h1>
       <ul>
-        <li>No tan caro</li>
+        <li>Caro</li>
+        <li>Carisimo</li>
+        <li>Incomprablesssss</li>
       </ul>
     </div>
   )
