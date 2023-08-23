@@ -12,6 +12,8 @@ const Budget = () => {
         <li>test 1</li>
         <li>test 5</li>
         <li>test 8</li>
+        <li>test 9</li>
+        <li>test 10</li>
       </ul>
     </div>
   )
