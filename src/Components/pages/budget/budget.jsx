@@ -10,6 +10,8 @@ const Budget = () => {
         <li>Incomprable</li>
         <li>test 2</li>
         <li>test 1</li>
+        <li>test 5</li>
+        <li>test 8</li>
       </ul>
     </div>
   )
