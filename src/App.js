@@ -13,7 +13,7 @@ import Providers from './Components/pages/providers/providers';
 const App = () => {
   return (
     <div className="App">
-       <Routes>
+        <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/user" element={<User />} />
           <Route path="/employees" element={<Employees />} />
