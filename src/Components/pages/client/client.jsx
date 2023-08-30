@@ -1,57 +1,68 @@
-import React, { useState} from "react";
-import './style.scss'
+import React, { useState } from "react";
+import "./style.scss";
+import { Link } from "react-router-dom";
 
 const Client = () => {
-  const [nombre, setNombre] = useState("");
-  const [apellido, setApellido] = useState("");
+  const [name, setName] = useState("");
+  const [surname, setSurname] = useState("");
   const [email, setEmail] = useState("");
+  const [error, setError] = useState("");
 
   const handleReg = (e) => {
     e.preventDefault();
-    // Aquí puedes agregar la lógica de autenticación
+
+    if (!name || !surname || !email) {
+      setError("Por favor complete todos los campos");
+      return;
+    }
   };
 
   return (
-    <div className="clientesReg">
-      <h1>Registro de Clientes</h1>
-
-      <h2>hola2</h2>
+    <>
+      <h1>REGISTRO DE CLIENTES</h1>
 
       <form onSubmit={handleReg}>
-        <div className="input-group">
-          <label htmlFor="nombre">Nombre </label>
-
+        <div className="form-group">
+          <label htmlFor="nombre"></label>
           <input
             type="text"
-            value={nombre}
-            onChange={(e) => setNombre(e.target.value)}
+            placeholder="Nombre"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
           />
         </div>
 
-        <div className="input-group">
-          <label htmlFor="apellido">Apellido </label>
-
+        <div className="form-group">
+          <label htmlFor="apellido"></label>
           <input
             type="text"
-            value={apellido}
-            onChange={(e) => setApellido(e.target.value)}
+            placeholder="Apellido"
+            value={surname}
+            onChange={(e) => setSurname(e.target.value)}
           />
         </div>
 
-        <div className="input-group">
-          <label htmlFor="email">Email </label>
-
+        <div className="form-group">
+          <label htmlFor="email"></label>
           <input
             type="text"
+            placeholder="Email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
         </div>
 
-        <button type="submit">Confirmar</button>
-        <button type="submit">Cancelar</button>
+        {error && <p className="error"> {error} </p>}
+        <button type="submit" className="submitBtn">
+          Confirmar
+        </button>
       </form>
-    </div>
+
+      <Link to="/" className="homeBtn">
+        {" "}
+        ← Volver al inicio
+      </Link>
+      </>
   );
 };
 

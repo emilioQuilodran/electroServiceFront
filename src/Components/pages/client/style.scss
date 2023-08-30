@@ -1,25 +1,95 @@
-@import '../../../scss/variables.scss';
-  
-  .clientesReg {
+@import "../../../scss/variables.scss";
 
-    max-width: 300px;
-    margin: 0 auto;
-    padding: 20px;
-  
+*{
+max-width: 500px;
+margin: 0 auto;
+padding: 20px;
 
 
-  
-    h1 {
-      text-align: center;
-      margin-bottom: 20px;
-      color: $primary-color;
-    }
+box-sizing: border-box;
 
-    .input-group {
-      display: flex;
-      align-items: center;
-     // margin-bottom: 10px; /* Espacio entre grupos de entrada */
-    }
-    
+}
+
+body {
+  display: flex;
+  flex-direction: column;
   
+  align-items: center;
+  
+  height: 100vh; /* Ocupa todo el alto de la ventana */
+  margin: 0; /* Elimina el margen del cuerpo */
+}
+
+
+h1 {
+  margin-top: 20px;
+
+  text-align: center;
+  margin-bottom: 50px;
+  color: $primary-color;
+}
+
+.form-group {
+  display: flex;
+  
+
+  display: flex;
+  flex-direction: column; 
+  align-items: center; 
+  margin-bottom: 15px;
+
+  label {
+    font-size: 16px;
+    margin-bottom: 5px;
+    font-weight: bold;
   }
+
+  input {
+    padding: 5px;
+    font-size: 16px;
+  }
+}
+
+.button-group {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+button {
+  margin-top: 50px;
+  padding: 10px 20px; /* Ajusta el padding para aumentar el tamaño */
+  font-size: 16px; /* Ajusta el tamaño del texto del botón */
+
+  font-family: $primary-font;
+  margin-left: 30%;
+  color: $primary-color;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.submitBtn {
+  font-family: $primary-font;
+  background-color: $secondary-color;
+  color: $background-color;
+  cursor: pointer;
+  border-style: none;
+  text-transform: uppercase;
+  width: 40%;
+  align-self: center;
+  height: 2rem;
+  padding: 5px 15px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+
+  &:hover {
+    border: solid 2px $primary-color;
+  }
+
+  .error {
+    text-align: center;
+    color: $primary-color;
+  }
+}
+

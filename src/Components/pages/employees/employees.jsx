@@ -15,8 +15,7 @@ const Employees = () => {
   const FormHandler = (e) => {
     e.preventDefault();
 
-    
-    if (!name || !surname|| !phone || !email || !rol || !password) {
+    if (!name || !surname || !phone || !email || !rol || !password) {
       setError("Por favor complete todos los campos");
       return;
     }
@@ -73,11 +72,11 @@ const Employees = () => {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
+
         {error && <p className="error"> {error} </p>}
         <button type="submit" className="submitBtn">
           Confirmar
         </button>
-        
       </form>
       <Link to="/" className="homeBtn">
         {" "}
