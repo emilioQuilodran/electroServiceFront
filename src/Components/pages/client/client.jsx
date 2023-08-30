@@ -13,43 +13,47 @@ const Client = () => {
 
   return (
     <div className="clientesReg">
+
       <h1>Registro de Clientes</h1>
 
-      <h2>hola2</h2>
 
       <form onSubmit={handleReg}>
-        <div className="input-group">
-          <label htmlFor="nombre">Nombre </label>
 
+      <div className="form-group">
+          <label htmlFor="nombre">Nombre</label>
           <input
             type="text"
+            placeholder=""
             value={nombre}
             onChange={(e) => setNombre(e.target.value)}
           />
         </div>
 
-        <div className="input-group">
-          <label htmlFor="apellido">Apellido </label>
-
+        <div className="form-group">
+          <label htmlFor="apellido">Apellido</label>
           <input
             type="text"
+            placeholder=""
             value={apellido}
             onChange={(e) => setApellido(e.target.value)}
           />
         </div>
 
-        <div className="input-group">
-          <label htmlFor="email">Email </label>
-
+        <div className="form-group">
+          <label htmlFor="email">Email</label>
           <input
             type="text"
+            placeholder=""
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
         </div>
 
-        <button type="submit">Confirmar</button>
-        <button type="submit">Cancelar</button>
+        <div className="button-group">
+          <button type="submit">Confirmar</button>
+          <button type="submit">Cancelar</button>
+        </div>
+
       </form>
     </div>
   );

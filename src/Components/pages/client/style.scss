@@ -1,25 +1,50 @@
 @import '../../../scss/variables.scss';
   
-  .clientesReg {
+.clientesReg {
+  max-width: 500px; /* mayor ancho en toda la pantalla*/
+  margin: 0 auto;
+  padding: 20px; 
 
-    max-width: 300px;
-    margin: 0 auto;
-    padding: 20px;
+}
+
+h1 {
+  margin-top: 20px;
+
+  text-align: center;
+  margin-bottom: 50px;
+  color: $primary-color;
+}
+
+.form-group {
+
+  display: flex;
+  flex-direction: column;
+
+  margin-bottom: 15px;
   
-
-
-  
-    h1 {
-      text-align: center;
-      margin-bottom: 20px;
-      color: $primary-color;
-    }
-
-    .input-group {
-      display: flex;
-      align-items: center;
-     // margin-bottom: 10px; /* Espacio entre grupos de entrada */
-    }
-    
-  
+  label {
+    font-size: 16px;
+    margin-bottom: 5px;
+    font-weight: bold;
   }
+  
+  input {
+    padding: 5px;
+    font-size: 16px;
+  }
+}
+
+.button-group {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+button {
+  margin-top: 50px;
+    padding: 10px 20px; /* Ajusta el padding para aumentar el tamaño */
+    font-size: 16px; /* Ajusta el tamaño del texto del botón */
+  }
+    
+
+  
