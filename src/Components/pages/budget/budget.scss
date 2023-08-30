@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+$primary-font: "Montserrat", sans-serif;
+$primary-color: #482728;
+$secondary-color: #02394A;
+$background-color: #F7F3E3;
+
+*{
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+    background-color: $background-color;
+}
+
+.budgetTitle{
+    font: 100% $primary-font;
+    font-size: 3rem;
+    text-align: center;
+    color: $primary-color;
+    text-transform: uppercase;
+    font-weight: 600;
+    padding: 20px;
+}
+
+.budgetForm{
+    font-family: $primary-font;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    flex-direction: column;
+    margin-left: 30%;
+    width: 40%;
+    gap: 15px;
+
+    .formItem{
+      font-family: $primary-font;
+      height: 2rem;
+      padding: 0.5rem;
+      border-radius: 5px;
+      border: solid 1px $primary-color;
+      width: 100%;
+      &:focus{
+          outline: none;
+      }
+    }
+
+    #description{
+      height: 10rem;
+    }
+
+    .submitBtn{
+      font-family: $primary-font;
+      background-color: $secondary-color;
+      color: $background-color;
+      cursor: pointer;
+      border-style: none;
+      text-transform: uppercase;
+      width: 40%;
+      align-self: center;
+      height: 2rem;
+      padding: 5px 15px;
+      border-radius: 5px;
+      margin-bottom: 20px;
+      &:hover{
+          border: solid 2px $primary-color;
+      }
+    }
+
+    .error{
+      text-align: center;
+      color: $primary-color;
+    }    
+}
+
+.homeBtn{
+  font-family: $primary-font;
+  margin-left: 45%;
+  color: $primary-color;
+  &:hover{
+      text-decoration: underline;
+  }
+}
