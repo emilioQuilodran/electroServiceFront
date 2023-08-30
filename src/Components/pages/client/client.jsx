@@ -15,7 +15,7 @@ const Client = () => {
     <div className="clientesReg">
       <h1>Registro de Clientes</h1>
 
-      <h1>hola</h1>
+      <h2>hola2</h2>
 
       <form onSubmit={handleReg}>
         <div className="input-group">
