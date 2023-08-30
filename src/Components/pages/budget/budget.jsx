@@ -1,31 +1,71 @@
+import "./budget.scss";
+import { Link } from "react-router-dom";
+
+import { useState } from "react";
 
 const Budget = () => {
+  const [receptionId, setReceptionId] = useState("");
+  const [description, setDescription] = useState("");
+  const [materialsList, setMaterialsList] = useState("");
+  const [date, setDate] = useState("");
+  const [error, setError] = useState("");
+
+  const FormHandler = (e) => {
+    e.preventDefault();
+
+    
+    if (!receptionId || !description|| !materialsList || !date) {
+      setError("Por favor complete todos los campos");
+      return;
+    }
+  };
+
   return (
-    <form action="" method="get">
-      <fieldset>
-        <h1>Budget</h1><hr/><br/>
-        <div>
-          <label htmlFor="id-reception"> ID recepción: </label>
-          <input id="id-reception" type="text" value="" size="28"/>
-        </div>
-        <div>
-          <label htmlFor="description">Descripción de la reparación: </label><br/>
-          <textarea id="description" rows="7" cols="41"></textarea>
-        </div>
-        <div>
-          <label htmlFor="materials-list">Lista de materiales: </label><br/>
-          <textarea id="materials-list" rows="7" cols="41">
-          </textarea>
-        </div>
-        <div>
-          <label htmlFor="warranty-end-date">Fecha finalización de garantía: </label>
-          <input id="warranty-end-date" type="date"/>
-        </div>
-        <br/>
-        <input type="submit" value="Enviar"></input>
-        <input type="button" value="Cancelar"/>
-      </fieldset>
-    </form>
+    <>
+      <h1 className="budgetTitle">Presupuesto</h1>
+      <form className="budgetForm" onSubmit={FormHandler}>
+        <label htmlFor="receptionId">ID Recepción</label>
+        <input
+          type="text"
+          id="receptionId"
+          className="formItem"
+          value={receptionId}
+          onChange={(e) => setReceptionId(e.target.value)}
+        />
+        <label htmlFor="description">Descripción de la reparación</label>
+        <input
+          type="text"
+          id="description"
+          className="formItem"
+          value={description}
+          onChange={(e) => setDescription(e.target.value)}
+        />
+        <label htmlFor="materialsList">Lista de materiales</label>
+        <input
+          type="text"
+          id="materialsList"
+          className="formItem"
+          value={materialsList}
+          onChange={(e) => setMaterialsList(e.target.value)}
+        />
+        <label htmlFor="date">Fecha validez garantía</label>
+        <input
+          type="date"
+          id="date"
+          className="formItem"
+          value={date}
+          onChange={(e) => setDate(e.target.value)}
+        />
+        {error && <p className="error"> {error} </p>}
+        <button type="submit" className="submitBtn">
+          Confirmar
+        </button>
+      </form>
+      <Link to="/" className="homeBtn">
+        {" "}
+        ← Volver al inicio
+      </Link>
+    </>
   )
 }
 
