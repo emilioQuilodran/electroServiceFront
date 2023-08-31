@@ -1,0 +1,36 @@
+html {
+     font-size: 62.5%;
+     box-sizing: border-box;
+ 
+     ::-webkit-scrollbar{
+         display: none;
+     }
+ }
+ 
+ *,
+ *:before,
+ *:after {
+     box-sizing: inherit;
+ }
+ 
+ body {
+     font-size: 1.6rem;
+     line-height: 1.8;
+     &.body-scroll {
+         padding-top: 28.8px;
+     }     
+ }
+ 
+ .container {
+     width: 95%;
+     max-width: 120rem;
+     margin: 0 auto;    
+ }
+ 
+ a {
+     text-decoration: none;
+ }
+ 
+ ul {
+     list-style: none;
+ }

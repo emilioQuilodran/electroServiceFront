@@ -1,4 +1,9 @@
-.formUsuario{
-    display: flex;
-   
-}
+@import './globalStyles';
+@import './colors';
+@import './components';
+@import './mixins';
+@import './normalize';
+@import './variables';
+
+//UI
+@import '../Components/pages/user/userr';
