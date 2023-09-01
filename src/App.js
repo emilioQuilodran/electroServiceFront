@@ -8,7 +8,7 @@ import Materials from './Components/pages/materials/materials';
 import Budget from './Components/pages/budget/budget';
 import Reception from './Components/pages/reception/reception';
 import Providers from './Components/pages/providers/providers';
-import Footer from './Components/pages/Footer/footer';
+import Footer from './Components/pages/Footer/footer.jsx';
 
 const App = () => {
   return (
