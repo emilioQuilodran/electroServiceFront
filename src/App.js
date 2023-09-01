@@ -8,7 +8,7 @@ import Materials from './Components/pages/materials/materials';
 import Budget from './Components/pages/budget/budget';
 import Reception from './Components/pages/reception/reception';
 import Providers from './Components/pages/providers/providers';
-
+import Footer from './Components/pages/Footer/footer';
 
 const App = () => {
   return (
@@ -22,6 +22,7 @@ const App = () => {
           <Route path="/budget" element={<Budget />} />
           <Route path="/reception" element={<Reception />} />
           <Route path="/providers" element={<Providers />} />
+          <Route path="/Footer" element={<Footer />} />
         </Routes>
     </div>
   );
