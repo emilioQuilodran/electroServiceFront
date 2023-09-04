@@ -9,61 +9,137 @@ const RegistroUsuario = () => {
     rol: 'cliente'
   });
 
+  const [contraseñaValida, setContraseñaValida] = useState(true);
+
+  const [selected, setSelected] = useState('');
+
+  const validarNombreApellido = (nombre, apellido) => {
+    const regex = /^[A-Za-z]+$/; //permite solo letras minusculas y mayus
+
+    if (!nombre || !apellido) {
+      //cambio vacio retorna false
+      return false;
+    }
+
+    if (!regex.test(nombre) || !regex.test(apellido)) {
+      //si ingresa caracteres retorna false
+      return false;
+    }
+
+    return true;
+  };
+
   const handleInputChange = (event) => {
     const { name, value } = event.target;
+
+    if (name === 'nombre' || name === 'apellido') {
+      const regex = /^[A-Za-z]*$/; //permite solo letras minusculas y mayus
+
+      if (!value.match(regex)) {
+        return;
+      }
+    }
+
     setUsuario((prevUsuario) => ({
       ...prevUsuario,
       [name]: value
     }));
   };
 
-  //confirmar
   const handleConfirmar = () => {
+    if (validarContraseña(usuario.contraseña)) {
 
-    console.log('Usuario registrado:', usuario);
+      const usuarioConID = {
+        ...usuario,
+        ID: 'IDTEST'
+      };
 
-    setUsuario({
-      nombre: '',
-      apellido: '',
-      email: '',
-      contraseña: '',
-      rol: 'cliente'
-    });
+      console.log('Usuario registrado:', usuarioConID);
+      setUsuario({
+        nombre: '',
+        apellido: '',
+        email: '',
+        contraseña: '',
+        rol: 'cliente'
+      });
+      setContraseñaValida(true);
+    } else {
+      setContraseñaValida(false);
+      alert('La contraseña debe tener al menos 8 caracteres, una mayúscula, un número y un símbolo.');
+    }
   };
 
-  
-  //canceal
   const handleCancelar = () => {
-
     setUsuario({
       nombre: '',
       apellido: '',
       email: '',
-      genero: '',
-      usuario: '',
       contraseña: '',
       rol: 'cliente'
     });
+    setContraseñaValida(true);
   };
 
-  //drop
-  const [selected, setSelected] = useState('');
-
-  const handleChange = event => {
-    console.log('Label 👉️', event.target.selectedOptions[0].label);
+  const handleChange = (event) => {
+    console.log('Label', event.target.selectedOptions[0].label);
     console.log(event.target.value);
 
     setSelected(event.target.value);
   };
 
 
+  const validarContraseña = (contraseña) => {
+    //Leng 8
+    if (contraseña.length < 8) {
+      return false;
+    }
 
+    //Mayus
+    if (!/[A-Z]/.test(contraseña)) {
+      return false;
+    }
+
+    //num
+    if (!/\d/.test(contraseña)) {
+      return false;
+    }
+
+    //Simb
+    if (!/[-!@#$%^&*()_+{}[\]:;<>,.?~\\-]/.test(contraseña)) {
+      return false;
+    }
+
+    return true;
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault(); //Evita envío automático
+
+    // Validar campos vacíos
+    if (
+      usuario.nombre === '' ||
+      usuario.apellido === '' ||
+      usuario.email === '' ||
+      usuario.usuario === '' ||
+      usuario.contraseña === '' ||
+      selected === ''
+    ) {
+      alert('Todos los campos son obligatorios.');
+      return;
+    }
+
+
+    console.log('Formulario enviado:', usuario);
+  };
+
+
+
+  //BODY
   return (
     <div className='formUsuario'>
       <h2>Registro de Usuario</h2>
-      <form>
-
-        <div>
+      <form className='formPartes' onSubmit={handleSubmit}>
+        <div className='test123'>
           <label htmlFor="nombre">Nombre:</label>
           <input
             type="text"
@@ -75,7 +151,7 @@ const RegistroUsuario = () => {
           />
         </div>
 
-        <div>
+        <div className='test123'>
           <label htmlFor="apellido">Apellido:</label>
           <input
             type="text"
@@ -87,7 +163,7 @@ const RegistroUsuario = () => {
           />
         </div>
 
-        <div>
+        <div className='test123'>
           <label htmlFor="email">E-Mail:</label>
           <input
             type="email"
@@ -99,21 +175,7 @@ const RegistroUsuario = () => {
           />
         </div>
 
-        <div>
-          <label htmlFor="genero">Genero:</label>
-
-            <select value={selected} onChange={handleChange}>
-              <option disabled={true} value="">
-                --Elija una opcion--
-              </option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-            </select>
-
-        </div>
-
-        <div>
+        <div className='test123'>
           <label htmlFor="usuario">Usuario:</label>
           <input
             type="text"
@@ -125,7 +187,25 @@ const RegistroUsuario = () => {
           />
         </div>
 
-        <div>
+        <div className='test123'>
+          <label htmlFor="genero">Género:</label>
+          <select
+            name="genero" // Asegúrate de que el atributo name sea "genero"
+            value={usuario.genero}
+            onChange={handleInputChange}
+            required
+          >
+            <option disabled={true} value="">
+              --Elija una opción--
+            </option>
+            <option value="1">Masc</option>
+            <option value="2">Fem</option>
+            <option value="3">Nodecirlo</option>
+          </select>
+        </div>
+
+
+        <div className='test123'>
           <label htmlFor="contraseña">Contraseña:</label>
           <input
             type="password"
@@ -135,12 +215,20 @@ const RegistroUsuario = () => {
             onChange={handleInputChange}
             required
           />
+
         </div>
-        <div>
-          <button type="button" onClick={handleCancelar}>Cancelar</button>
-          <button type="button" onClick={handleConfirmar}>Confirmar</button>
+
+        <div className='botones'>
+          <button type="button" onClick={handleCancelar} className='boton cancelar'>Cancelar</button>
+          <button type="submit" onClick={handleConfirmar} className='boton confirmar'>Confirmar</button>
         </div>
       </form>
+
+      <div className="error">
+        {!contraseñaValida && (
+          <p >La contraseña debe tener al menos 8 caracteres, una mayúscula, un número y un símbolo.</p>
+        )}
+      </div>
 
     </div>
   );

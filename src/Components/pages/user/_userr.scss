@@ -1,3 +1,29 @@
-.formUsuario{
+.formUsuario {
+    text-align: center;
+
+    .formPartes {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-content: center;
+        gap: .8rem;
+    }
+
+    .test123 {
+        display: flex;
+        justify-content: space-between;
+        gap: .5rem;
+    }
+
+}
+
+
+.botones {
     display: flex;
+    justify-content: space-evenly;
+
+    .boton {
+        width: 10rem;
+        background: #fff;
+    }
 }
