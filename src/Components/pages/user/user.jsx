@@ -113,9 +113,9 @@ const RegistroUsuario = () => {
   };
 
   const handleSubmit = (event) => {
-    event.preventDefault(); //Evita envío automático
+    event.preventDefault(); //Evita envio automatico
 
-    // Validar campos vacíos
+    //Valida campos vacios
     if (
       usuario.nombre === '' ||
       usuario.apellido === '' ||
@@ -190,7 +190,7 @@ const RegistroUsuario = () => {
         <div className='test123'>
           <label htmlFor="genero">Género:</label>
           <select
-            name="genero" // Asegúrate de que el atributo name sea "genero"
+            name="genero"
             value={usuario.genero}
             onChange={handleInputChange}
             required
