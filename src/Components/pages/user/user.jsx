@@ -29,15 +29,31 @@ const RegistroUsuario = () => {
     return true;
   };
 
+  //
+  const [generoSeleccionado, setGeneroSeleccionado] = useState(false);
+
   const handleInputChange = (event) => {
     const { name, value } = event.target;
 
+    //Evita agregar espacios en blancos
+    if (name === 'email' || name === 'usuario' || name === 'contraseña') {
+      if (value.includes(' ')) {
+        return;
+      }
+    }
+
     if (name === 'nombre' || name === 'apellido') {
-      const regex = /^[A-Za-z]*$/; //permite solo letras minusculas y mayus
+      const regex = /^[A-Za-z]*$/; // permite solo letras minusculas y mayus
 
       if (!value.match(regex)) {
         return;
       }
+    }
+
+    if (name === 'genero' && value !== '') {
+      setGeneroSeleccionado(true);
+    } else {
+      setGeneroSeleccionado(false); //desabilita --Elija una opcion del drop--
     }
 
     setUsuario((prevUsuario) => ({
@@ -45,6 +61,7 @@ const RegistroUsuario = () => {
       [name]: value
     }));
   };
+
 
   const handleConfirmar = () => {
     if (validarContraseña(usuario.contraseña)) {
@@ -75,10 +92,12 @@ const RegistroUsuario = () => {
       apellido: '',
       email: '',
       contraseña: '',
-      rol: 'cliente'
+      rol: 'cliente',
+      genero: '',
     });
     setContraseñaValida(true);
   };
+
 
   const handleChange = (event) => {
     console.log('Label', event.target.selectedOptions[0].label);
@@ -115,7 +134,7 @@ const RegistroUsuario = () => {
   const handleSubmit = (event) => {
     event.preventDefault(); //Evita envio automatico
 
-    //Valida campos vacios
+    // Valida campos vacos
     if (
       usuario.nombre === '' ||
       usuario.apellido === '' ||
@@ -171,6 +190,11 @@ const RegistroUsuario = () => {
             name="email"
             value={usuario.email}
             onChange={handleInputChange}
+            onKeyPress={(e) => {
+              if (e.key === ' ') {
+                e.preventDefault();
+              }
+            }}
             required
           />
         </div>
@@ -183,6 +207,12 @@ const RegistroUsuario = () => {
             name="usuario"
             value={usuario.usuario}
             onChange={handleInputChange}
+            //espacios en blancos >.<
+            onKeyPress={(e) => {
+              if (e.key === ' ') {
+                e.preventDefault();
+              }
+            }}
             required
           />
         </div>
@@ -195,7 +225,7 @@ const RegistroUsuario = () => {
             onChange={handleInputChange}
             required
           >
-            <option disabled={true} value="">
+            <option value="" disabled={generoSeleccionado}>
               --Elija una opción--
             </option>
             <option value="1">Masc</option>
@@ -203,7 +233,6 @@ const RegistroUsuario = () => {
             <option value="3">Nodecirlo</option>
           </select>
         </div>
-
 
         <div className='test123'>
           <label htmlFor="contraseña">Contraseña:</label>
