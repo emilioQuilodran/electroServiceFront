@@ -13,6 +13,7 @@ const Home = () => {
         <li style={{listStyle: "none", padding: 5}}><Link to="/budget">Presupuestos</Link></li>
         <li style={{listStyle: "none", padding: 5}}><Link to="/reception">Recepción</Link></li>
         <li style={{listStyle: "none", padding: 5}}><Link to="/providers">Proveedores</Link></li>
+        <li style={{listStyle: "none", padding: 5}}><Link to="/clientList">Lista de clientes</Link></li>
       </ul>
     </div>
   )

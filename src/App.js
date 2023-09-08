@@ -9,6 +9,7 @@ import Budget from './Components/pages/budget/budget';
 import Reception from './Components/pages/reception/reception';
 import Providers from './Components/pages/providers/providers';
 import Footer from './Components/pure/footer';
+import ClientList from './Components/pages/client/clientList';
 
 const App = () => {
   return (
@@ -23,6 +24,7 @@ const App = () => {
           <Route path="/reception" element={<Reception />} />
           <Route path="/providers" element={<Providers />} />    
           <Route path="/footer" element={<Footer />} />
+          <Route path="/clientList" element={<ClientList />} />
         </Routes>
     </div>
   );
