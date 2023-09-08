@@ -18,7 +18,7 @@ const Client = () => {
   };
 
   return (
-    <>
+    <div>
       <h1>REGISTRO DE CLIENTES</h1>
 
       <form onSubmit={handleReg}>
@@ -62,7 +62,7 @@ const Client = () => {
         {" "}
         ← Volver al inicio
       </Link>
-      </>
+    </div>
   );
 };
 
