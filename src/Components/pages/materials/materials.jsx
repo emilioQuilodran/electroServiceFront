@@ -29,7 +29,7 @@ const Materials = () => {
   }
 
   return (
-    <div>
+    <div className="materialsWrapper">
       <h1 className="title">Alta de Materiales</h1>
       
       <form className="materialsForm" onSubmit={handleForm}>

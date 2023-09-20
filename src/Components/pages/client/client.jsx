@@ -18,7 +18,7 @@ const Client = () => {
   };
 
   return (
-    <div>
+    <div className="clientWrapper">
       <h1>REGISTRO DE CLIENTES</h1>
 
       <form onSubmit={handleReg}>

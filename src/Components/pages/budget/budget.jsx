@@ -35,7 +35,7 @@ const Budget = () => {
   };
 
   return (
-    <>
+    <div className="budgetWrapper">
       <h1 className="budgetTitle">Presupuesto</h1>
       <form className="budgetForm" onSubmit={FormHandler}>
         <label htmlFor="receptionId">ID Recepción</label>
@@ -112,7 +112,7 @@ const Budget = () => {
       <Link to="/" className="homeBtn">
         ← Volver al inicio
       </Link>
-    </>
+    </div>
   )
 }
 

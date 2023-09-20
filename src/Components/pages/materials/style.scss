@@ -1,14 +1,25 @@
-@use '../../../scss/globalStyles.scss' as global; 
-@use '../../../scss/variables.scss' as variables; 
+@import '../../../scss/globalStyles.scss'; 
+@import '../../../scss/colors.scss'; 
 
-.title {
-    font-size: 3rem;
-    text-align: center;
-    color: variables.$primary-color;
-    text-transform: uppercase;
-    font-weight: 600;
-    padding: 20px;
+.materialsWrapper{
+    .title {
+        font-size: 3rem;
+        text-align: center;
+        color: $primary-color;
+        text-transform: uppercase;
+        font-weight: 600;
+        padding: 20px;
+    }
+    .homeBtn{
+        margin-left: 45%;
+        color: $primary-color;
+        &:hover{
+            text-decoration: underline;
+        }
+    }
+
 }
+
 
 .materialsForm {
     display: flex;
@@ -23,7 +34,7 @@
         height: 2rem;
         padding: 0.5rem;
         border-radius: 5px;
-        border: solid 1px variables.$primary-color;
+        border: solid 1px $primary-color;
         width: 100%;
         &:focus{
             outline: none;
@@ -31,8 +42,8 @@
     }
 
     .submitBtn{
-        background-color: variables.$secondary-color;
-        color: variables.$background-color;
+        background-color: $secondary-color;
+        color: $background-color;
         cursor: pointer;
         border-style: none;
         text-transform: uppercase;
@@ -43,20 +54,12 @@
         border-radius: 5px;
         margin-bottom: 20px;
         &:hover{
-            border: solid 2px variables.$primary-color;
+            border: solid 2px $primary-color;
         }
     }
 
     .error{
         text-align: center;
-        color: variables.$primary-color;
+        color:$primary-color;
     }    
-}
-
-.homeBtn{
-    margin-left: 45%;
-    color: variables.$primary-color;
-    &:hover{
-        text-decoration: underline;
-    }
 }

@@ -1,15 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import "../../../scss/colors.scss";
+@import "../../../scss/fonts.scss";
 
-$primary-font: "Montserrat", sans-serif;
-$primary-color: #482728;
-$secondary-color: #02394A;
-$background-color: #F7F3E3;
+.budgetWrapper{
+  .homeBtn{
+    font-family: $primary-font;
+    margin-left: 45%;
+    color: $primary-color;
+    &:hover{
+        text-decoration: underline;
+    }
+  }
 
-*{
-    margin: 0;
-    box-sizing: border-box;
-    padding: 0;
-    background-color: $background-color;
 }
 
 .budgetTitle{
@@ -78,13 +79,4 @@ $background-color: #F7F3E3;
       text-align: center;
       color: $primary-color;
     }    
-}
-
-.homeBtn{
-  font-family: $primary-font;
-  margin-left: 45%;
-  color: $primary-color;
-  &:hover{
-      text-decoration: underline;
-  }
 }

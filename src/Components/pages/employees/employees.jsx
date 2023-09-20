@@ -22,7 +22,7 @@ const Employees = () => {
   };
 
   return (
-    <>
+    <div className="employeesWraper">
       <h1 className="employeesTitle">Empleados</h1>
       <form className="employeesForm" onSubmit={FormHandler}>
         <input
@@ -82,7 +82,7 @@ const Employees = () => {
         {" "}
         ← Volver al inicio
       </Link>
-    </>
+    </div>
   );
 };
 

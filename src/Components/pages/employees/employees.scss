@@ -1,17 +1,16 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+@import "../../../scss/colors.scss";
+@import "../../../scss/fonts.scss";
 
-// agregué las variables acá provisoriamente para no chocar con nadie hasta que tengamos los colores definitivos etc
-
-$primary-font: "Montserrat", sans-serif;
-$primary-color: #482728;
-$secondary-color: #02394a;
-$background-color: #f7f3e3;
-
-* {
-  margin: 0;
-  box-sizing: border-box;
-  padding: 0;
-  background-color: $background-color;
+.employeesWraper{
+  
+  .homeBtn {
+    font-family: $primary-font;
+    margin-left: 45%;
+    color: $primary-color;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 }
 
 .employeesTitle {
@@ -70,11 +69,3 @@ $background-color: #f7f3e3;
   }
 }
 
-.homeBtn {
-  font-family: $primary-font;
-  margin-left: 45%;
-  color: $primary-color;
-  &:hover {
-    text-decoration: underline;
-  }
-}

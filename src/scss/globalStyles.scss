@@ -1,8 +1,19 @@
+@import './colors.scss';
+@import './fonts.scss';
+
 *{
      margin: 0;
      padding: 0;
+     box-sizing: border-box;
+     font-family: $primary-font;
+     color:$text-color;
+     background-color: $background-color;
 }
 
+h1{
+     font-size: 3rem;
+     text-align: center;
+}
 
 ul ol {
      list-style: none;
